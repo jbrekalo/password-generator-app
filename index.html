@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+
+    <title>Frontend Mentor | Password generator app</title>
+  </head>
+  <body>
+    <main class="app">
+      <p class="app__title">Password Generator</p>
+      <section class="app__password">
+        <p class="app__result">P4$5W0rD!</p>
+        <img
+          class="app__icon-copy"
+          src="/assets/images/icon-copy.svg"
+          alt="copy icon"
+        />
+      </section>
+      <section class="app__body">
+        <div class="app__length-settings">
+          <div class="app__length-container">
+            <span class="app__length-label">Character Length</span>
+            <span class="app__char-number">10</span>
+          </div>
+          <div class="app__slider-container">
+            <input
+              type="range"
+              min="1"
+              max="20"
+              value="10"
+              class="app__slider"
+            />
+            <div class="app__slider-progressbar"></div>
+          </div>
+        </div>
+        <div class="app__other-settings">
+          <div class="checkbox-container">
+            <label>
+              <input type="checkbox" name="uppercase" checked />
+              <span for="uppercase">Include Uppercase Letters</span>
+            </label>
+          </div>
+          <div class="checkbox-container">
+            <label>
+              <input type="checkbox" name="lowercase" />
+              <span for="lowercase">Include Lowercase Letters</span>
+            </label>
+          </div>
+          <div class="checkbox-container">
+            <label>
+              <input type="checkbox" name="numbers" />
+              <span for="lowercase">Include Numbers</span>
+            </label>
+          </div>
+          <div class="checkbox-container">
+            <label>
+              <input type="checkbox" name="symbols" />
+              <span for="lowercase">Include Symbols</span>
+            </label>
+          </div>
+        </div>
+        <div class="app__strength">Strength</div>
+        <button>Generate</button>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

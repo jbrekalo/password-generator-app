@@ -1,0 +1,246 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+  /* colors */
+  --clr-very-dark-grey: hsl(248 15% 11%);
+  --clr-dark-grey: hsl(248 10% 15%);
+  --clr-grey: hsl(251 9% 53%);
+  --clr-almost-white: hsl(252 11% 91%);
+
+  --clr-red: hsl(0, 91%, 63%);
+  --clr-orange: hsl(13, 95%, 66%);
+  --clr--yellow: hsl(42, 91%, 68%);
+  --clr--neon-green: hsl(127, 100%, 82%);
+
+  /* font-families */
+  --ff-jetbrains: "JetBrains Mono", monospace;
+
+  /* font-size */
+  --fs-32px: 3.2rem;
+  --fs-24px: 2.4rem;
+  --fs-18px: 1.8rem;
+  --fs-16px: 1.6rem;
+}
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing and font size */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Set font size */
+html {
+  font-size: 62.5%;
+}
+
+/* Reset margins and paddings */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+  padding: 0;
+}
+
+/* set up the body */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--ff-jetbrains);
+  color: var(--clr-almost-white);
+  line-height: 1.5;
+
+  background-color: var(--clr-very-dark-grey);
+  min-height: 100vh;
+}
+
+/* make images easier to work with */
+img,
+picutre {
+  max-width: 100%;
+  display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+.checkbox-container {
+  display: flex;
+  height: 2rem;
+}
+
+/* ------------------- */
+/* Compontents         */
+/* ------------------- */
+
+.app {
+  width: 100%;
+  padding: 0 1.6rem;
+  font-size: var(--fs-16px);
+}
+
+.app__title {
+  font-size: var(--fs-16px);
+  color: var(--clr-grey);
+  text-align: center;
+
+  margin-bottom: 1.6rem;
+}
+
+.app__password {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 6.4rem;
+
+  margin-bottom: 1.6rem;
+  padding: 0 1.6rem;
+
+  background: var(--clr-dark-grey);
+}
+
+.app__result {
+  font-size: var(--fs-24px);
+  line-height: 3.2rem;
+}
+
+.app__icon-copy {
+  width: 17.5px;
+  height: 20px;
+}
+
+.app__body {
+  padding: 1.6rem;
+  background: var(--clr-dark-grey);
+}
+
+.app__length-settings {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 3.2rem;
+}
+
+.app__length-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 0.8rem;
+}
+
+.app__slider-container {
+  position: relative;
+  height: 2.8rem;
+}
+
+.app__slider {
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: 1;
+
+  height: 0.8rem;
+  width: 100%;
+  margin: 0;
+
+  background: var(--clr-almost-white);
+}
+
+.app__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  z-index: 1;
+
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+  background: var(--clr-almost-white);
+  cursor: pointer;
+}
+
+.app__slider-progressbar {
+  position: absolute;
+  left: 0;
+  top: 9px;
+  z-index: 0;
+
+  width: 50%;
+  height: 0.8rem;
+
+  background: var(--clr--neon-green);
+}
+
+.app__char-number {
+  font-size: var(--fs-24px);
+  line-height: 3.2rem;
+  color: var(--clr--neon-green);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + span::before {
+  content: "";
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 2rem;
+  border: 2px solid var(--clr-almost-white);
+}
+
+input[type="checkbox"]:checked + span::before {
+  content: url(/assets/images/icon-check.svg);
+  align-content: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 2rem;
+  border: none;
+  background: var(--clr--neon-green);
+}
+
+.app__other-settings {
+  display: grid;
+  gap: 1.6rem;
+
+  margin-bottom: 3.2rem;
+}
+
+.app__strength {
+  display: flex;
+  align-items: center;
+
+  height: 5.6rem;
+  padding: 0 1.6rem;
+
+  background: var(--clr-very-dark-grey);
+}
