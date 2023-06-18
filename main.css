@@ -222,7 +222,7 @@ input[type="checkbox"] + span::before {
 }
 
 input[type="checkbox"]:checked + span::before {
-  content: url(./assets/images/icon-check.svg);
+  content: url(assets/images/icon-check.svg);
   align-content: center;
   justify-content: center;
 
