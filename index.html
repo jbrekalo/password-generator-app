@@ -22,8 +22,8 @@
   </head>
   <body>
     <main class="app">
-      <p class="app__title">Password Generator</p>
-      <section class="app__password">
+      <h1 class="app__title">Password Generator</h1>
+      <section class="app__result-container">
         <p class="app__result">P4$5W0rD!</p>
         <img
           class="app__icon-copy"
@@ -31,11 +31,11 @@
           alt="copy icon"
         />
       </section>
-      <section class="app__body">
-        <div class="app__length-settings">
-          <div class="app__length-container">
+      <section class="app__controls">
+        <div class="app__length">
+          <div class="flex-spacebetween marging-btm-sm">
             <span class="app__length-label">Character Length</span>
-            <span class="app__char-number">10</span>
+            <span class="app__length-number">10</span>
           </div>
           <div class="app__slider-container">
             <input
@@ -48,40 +48,32 @@
             <div class="app__slider-progressbar"></div>
           </div>
         </div>
-        <div class="app__other-settings">
-          <div class="checkbox-container">
-            <label>
-              <input type="checkbox" name="uppercase" checked />
-              <span for="uppercase">Include Uppercase Letters</span>
-            </label>
-          </div>
-          <div class="checkbox-container">
-            <label>
-              <input type="checkbox" name="lowercase" />
-              <span for="lowercase">Include Lowercase Letters</span>
-            </label>
-          </div>
-          <div class="checkbox-container">
-            <label>
-              <input type="checkbox" name="numbers" />
-              <span for="lowercase">Include Numbers</span>
-            </label>
-          </div>
-          <div class="checkbox-container">
-            <label>
-              <input type="checkbox" name="symbols" />
-              <span for="lowercase">Include Symbols</span>
-            </label>
-          </div>
-        </div>
+        <form class="flex-column gap-md marging-btm-lg">
+          <span>
+            <input type="checkbox" name="numbers" id="uppercase" checked />
+            <label for="uppercase">Include Uppercase Letters</label>
+          </span>
+          <span>
+            <input type="checkbox" name="symbols" id="lowercase" />
+            <label for="lowercase">Include Lowercase Letters</label>
+          </span>
+          <span>
+            <input type="checkbox" name="numbers" id="numbers" />
+            <label for="numbers">Include Numbers</label>
+          </span>
+          <span>
+            <input type="checkbox" name="symbols" id="symbols" />
+            <label for="symbols">Include Symbols</label>
+          </span>
+        </form>
         <div class="app__strength">
           <p class="app__strength-label">Strength</p>
-          <div class="app__strength-value-container">
+          <div class="flex">
             <p class="app__strength-value">Medium</p>
             <div class="app__strength-bars">
-              <div class="app__strength-bar medium"></div>
-              <div class="app__strength-bar medium"></div>
-              <div class="app__strength-bar medium"></div>
+              <div class="app__strength-bar app__strength-bar--medium"></div>
+              <div class="app__strength-bar app__strength-bar--medium"></div>
+              <div class="app__strength-bar app__strength-bar--medium"></div>
               <div class="app__strength-bar"></div>
             </div>
           </div>

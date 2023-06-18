@@ -11,8 +11,8 @@
 
   --clr-red: hsl(0, 91%, 63%);
   --clr-orange: hsl(13, 95%, 66%);
-  --clr--yellow: hsl(42, 91%, 68%);
-  --clr--neon-green: hsl(127, 100%, 82%);
+  --clr-yellow: hsl(42, 91%, 68%);
+  --clr-neon-green: hsl(127, 100%, 82%);
 
   /* font-families */
   --ff-jetbrains: "JetBrains Mono", monospace;
@@ -28,9 +28,7 @@
 /* Reset               */
 /* ------------------- */
 
-/* https://piccalil.li/blog/a-modern-css-reset/ */
-
-/* Box sizing and font size */
+/* Box sizing */
 *,
 *::before,
 *::after {
@@ -89,9 +87,43 @@ select {
 /* Utility classes     */
 /* ------------------- */
 
-.checkbox-container {
+.flex {
   display: flex;
-  height: 2rem;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-spacebetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.padding-md {
+  padding: 1.6rem;
+}
+
+.padding-side-md {
+  padding: 0 1.6rem;
+}
+
+.marging-btm-sm {
+  margin-bottom: 0.8rem;
+}
+
+.marging-btm-md {
+  margin-bottom: 1.6rem;
+}
+
+.marging-btm-lg {
+  margin-bottom: 3.2rem;
+}
+
+.gap-md {
+  gap: 1.6rem;
 }
 
 /* ------------------- */
@@ -112,7 +144,7 @@ select {
   margin-bottom: 1.6rem;
 }
 
-.app__password {
+.app__result-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -135,24 +167,16 @@ select {
   height: 20px;
 }
 
-.app__body {
+.app__controls {
   padding: 1.6rem;
   background: var(--clr-dark-grey);
 }
 
-.app__length-settings {
+.app__length {
   display: flex;
   flex-direction: column;
 
   margin-bottom: 3.2rem;
-}
-
-.app__length-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin-bottom: 0.8rem;
 }
 
 .app__slider-container {
@@ -195,20 +219,20 @@ select {
   width: 50%;
   height: 0.8rem;
 
-  background: var(--clr--neon-green);
+  background: var(--clr-neon-green);
 }
 
-.app__char-number {
+.app__length-number {
   font-size: var(--fs-24px);
   line-height: 3.2rem;
-  color: var(--clr--neon-green);
+  color: var(--clr-neon-green);
 }
 
 input[type="checkbox"] {
   display: none;
 }
 
-input[type="checkbox"] + span::before {
+input[type="checkbox"] + label::before {
   content: "";
   display: inline-flex;
   vertical-align: middle;
@@ -221,7 +245,7 @@ input[type="checkbox"] + span::before {
   border: 2px solid var(--clr-almost-white);
 }
 
-input[type="checkbox"]:checked + span::before {
+input[type="checkbox"]:checked + label::before {
   content: url(assets/images/icon-check.svg);
   align-content: center;
   justify-content: center;
@@ -232,15 +256,7 @@ input[type="checkbox"]:checked + span::before {
   margin-right: 2rem;
 
   border: none;
-  background: var(--clr--neon-green);
-}
-
-.app__other-settings {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-
-  margin-bottom: 3.2rem;
+  background: var(--clr-neon-green);
 }
 
 .app__strength {
@@ -253,10 +269,6 @@ input[type="checkbox"]:checked + span::before {
   margin-bottom: 1.6rem;
 
   background: var(--clr-very-dark-grey);
-}
-
-.app__strength-value-container {
-  display: flex;
 }
 
 .app__strength-label {
@@ -286,9 +298,9 @@ input[type="checkbox"]:checked + span::before {
   border: 2px solid var(--clr-almost-white);
 }
 
-.app__strength-bar.medium {
+.app__strength-bar--medium {
   border: none;
-  background: var(--clr--yellow);
+  background: var(--clr-yellow);
 }
 
 .app__button {
@@ -303,7 +315,7 @@ input[type="checkbox"]:checked + span::before {
 
   height: 5.6rem;
   width: 100%;
-  background: var(--clr--neon-green);
+  background: var(--clr-neon-green);
   color: var(--clr-dark-grey);
 
   cursor: pointer;

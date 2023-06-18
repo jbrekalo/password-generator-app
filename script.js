@@ -1,7 +1,6 @@
 const sliderEl = document.querySelector(".app__slider");
-const sliderValue = document.querySelector(".app__char-number");
+const sliderValue = document.querySelector(".app__length-number");
 const sliderProgressBar = document.querySelector(".app__slider-progressbar");
-const sliderButton = document.querySelector(".app__slider-button");
 
 sliderEl.addEventListener("input", function (e) {
   const tempSliderValue = e.target.value;
