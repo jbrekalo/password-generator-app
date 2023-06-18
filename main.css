@@ -211,25 +211,33 @@ input[type="checkbox"] {
 input[type="checkbox"] + span::before {
   content: "";
   display: inline-flex;
+  vertical-align: middle;
+
   width: 2rem;
   height: 2rem;
+
   margin-right: 2rem;
+
   border: 2px solid var(--clr-almost-white);
 }
 
 input[type="checkbox"]:checked + span::before {
-  content: url(/assets/images/icon-check.svg);
+  content: url(./assets/images/icon-check.svg);
   align-content: center;
   justify-content: center;
+
   width: 2rem;
   height: 2rem;
+
   margin-right: 2rem;
+
   border: none;
   background: var(--clr--neon-green);
 }
 
 .app__other-settings {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1.6rem;
 
   margin-bottom: 3.2rem;
@@ -266,8 +274,7 @@ input[type="checkbox"]:checked + span::before {
 }
 
 .app__strength-bars {
-  display: grid;
-  grid-template-columns: 1rem 1rem 1rem 1rem;
+  display: flex;
   gap: 0.8rem;
 }
 
