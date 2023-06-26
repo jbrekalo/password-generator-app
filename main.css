@@ -89,6 +89,7 @@ select {
 
 .flex {
   display: flex;
+  align-items: center;
 }
 
 .flex-column {
@@ -126,6 +127,10 @@ select {
   gap: 1.6rem;
 }
 
+.hidden {
+  display: none;
+}
+
 /* ------------------- */
 /* Compontents         */
 /* ------------------- */
@@ -160,6 +165,12 @@ select {
 .app__result {
   font-size: var(--fs-24px);
   line-height: 3.2rem;
+}
+
+.app__copied {
+  font-size: var(--fs-18px);
+  text-transform: uppercase;
+  color: var(--clr-neon-green);
 }
 
 .app__icon-copy {

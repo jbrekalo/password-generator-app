@@ -1,4 +1,5 @@
 const appResult = document.querySelector(".app__result");
+const appCopyLabel = document.querySelector(".app__copied");
 const sliderEl = document.querySelector(".app__slider");
 const sliderValue = document.querySelector(".app__length-number");
 const sliderProgressBar = document.querySelector(".app__slider-progressbar");
@@ -9,6 +10,7 @@ const checkNumber = document.getElementById("numbers");
 const checkSymbol = document.getElementById("symbols");
 
 const btnGenerate = document.querySelector(".app__button");
+const btnCopy = document.querySelector(".app__icon-copy");
 
 let charLength = 10;
 
@@ -60,4 +62,13 @@ btnGenerate.addEventListener("click", function (e) {
   e.preventDefault();
 
   appResult.textContent = passGenerator();
+});
+
+btnCopy.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  let copy = appResult.textContent;
+  navigator.clipboard.writeText(`${copy}`);
+
+  appCopyLabel.classList.remove("hidden");
 });
