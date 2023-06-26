@@ -62,6 +62,7 @@ btnGenerate.addEventListener("click", function (e) {
   e.preventDefault();
 
   appResult.textContent = passGenerator();
+  appCopyLabel.classList.add("hidden");
 });
 
 btnCopy.addEventListener("click", function (e) {

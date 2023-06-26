@@ -131,6 +131,11 @@ select {
   display: none;
 }
 
+p:empty:before {
+  content: attr(data-placeholder);
+  color: var(--clr-grey);
+}
+
 /* ------------------- */
 /* Compontents         */
 /* ------------------- */
