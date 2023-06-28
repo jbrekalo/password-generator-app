@@ -51,13 +51,14 @@
             <div class="app__slider-progressbar"></div>
           </div>
         </div>
-        <form class="flex-column gap-md marging-btm-lg">
+        <form class="flex-column gap-md marging-btm-lg" id="checkboxes">
           <span>
             <input
               type="checkbox"
-              name="numbers"
+              name="uppercase"
               id="uppercase"
               class="checkbox"
+              value="5"
               checked
             />
             <label for="uppercase">Include Uppercase Letters</label>
@@ -65,9 +66,10 @@
           <span>
             <input
               type="checkbox"
-              name="symbols"
+              name="lowercase"
               id="lowercase"
               class="checkbox"
+              value="5"
             />
             <label for="lowercase">Include Lowercase Letters</label>
           </span>
@@ -77,6 +79,7 @@
               name="numbers"
               id="numbers"
               class="checkbox"
+              value="5"
             />
             <label for="numbers">Include Numbers</label>
           </span>
@@ -86,6 +89,7 @@
               name="symbols"
               id="symbols"
               class="checkbox"
+              value="5"
             />
             <label for="symbols">Include Symbols</label>
           </span>
@@ -95,9 +99,9 @@
           <div class="flex">
             <p class="app__strength-value">Medium</p>
             <div class="app__strength-bars">
-              <div class="app__strength-bar app__strength-bar--medium"></div>
-              <div class="app__strength-bar app__strength-bar--medium"></div>
-              <div class="app__strength-bar app__strength-bar--medium"></div>
+              <div class="app__strength-bar app__strength-bar--very-weak"></div>
+              <div class="app__strength-bar"></div>
+              <div class="app__strength-bar"></div>
               <div class="app__strength-bar"></div>
             </div>
           </div>

@@ -232,7 +232,7 @@ p:empty:before {
   top: 9px;
   z-index: 0;
 
-  width: 50%;
+  width: 47.37%;
   height: 0.8rem;
 
   background: var(--clr-neon-green);
@@ -314,9 +314,24 @@ input[type="checkbox"]:checked + label::before {
   border: 2px solid var(--clr-almost-white);
 }
 
+.app__strength-bar--very-weak {
+  border: none;
+  background: var(--clr-red);
+}
+
+.app__strength-bar--weak {
+  border: none;
+  background: var(--clr-orange);
+}
+
 .app__strength-bar--medium {
   border: none;
   background: var(--clr-yellow);
+}
+
+.app__strength-bar--strong {
+  border: none;
+  background: var(--clr-neon-green);
 }
 
 .app__button {
