@@ -1,3 +1,7 @@
+//////////////////
+// Declarations //
+//////////////////
+
 const appResult = document.querySelector(".app__result");
 const appCopyLabel = document.querySelector(".app__copied");
 const sliderEl = document.querySelector(".app__slider");
@@ -11,15 +15,20 @@ const checkNumber = document.getElementById("numbers");
 const checkSymbol = document.getElementById("symbols");
 
 const strengthBars = document.querySelectorAll(".app__strength-bar");
+const strengthValue = document.querySelector(".app__strength-value");
 
 const btnGenerate = document.querySelector(".app__button");
 const btnCopy = document.querySelector(".app__icon-copy");
 
 const checkboxes = [checkUpper, checkLower, checkNumber, checkSymbol];
 let charLength = 10;
-let pointsCheckboxes = 5;
+let pointsCheckboxes = 15;
 let pointsSlider = 0;
 let pointsTotal = 0;
+
+///////////////
+// Functions //
+///////////////
 
 const passGenerator = function () {
   let result = "";
@@ -60,34 +69,42 @@ const resetRating = function () {
 
 const strengthRating = function () {
   pointsTotal = pointsSlider + pointsCheckboxes;
+  resetRating();
 
-  if (pointsTotal <= 14.5) {
-    resetRating();
+  if (pointsTotal <= 14.5 || pointsSlider <= 6) {
+    strengthValue.textContent = "Too weak!";
+
     for (let i = 0; i < strengthBars.length - 3; i++) {
       const bar = strengthBars[i];
-      console.log(bar);
       bar.classList.add("app__strength-bar--very-weak");
     }
-  } else if (pointsTotal >= 14.5 && pointsTotal < 23) {
-    resetRating();
+  } else if ((pointsTotal >= 14.5 && pointsTotal < 23) || pointsSlider <= 9) {
+    strengthValue.textContent = "Weak";
+
     for (let i = 0; i < strengthBars.length - 2; i++) {
       const bar = strengthBars[i];
       bar.classList.add("app__strength-bar--weak");
     }
   } else if (pointsTotal >= 23 && pointsTotal < 31.5) {
-    resetRating();
+    strengthValue.textContent = "Medium";
+
     for (let i = 0; i < strengthBars.length - 1; i++) {
       const bar = strengthBars[i];
       bar.classList.add("app__strength-bar--medium");
     }
   } else if (pointsTotal >= 31.5) {
-    resetRating();
+    strengthValue.textContent = "Strong";
+
     for (let i = 0; i < strengthBars.length; i++) {
       const bar = strengthBars[i];
       bar.classList.add("app__strength-bar--strong");
     }
   }
 };
+
+////////////////////
+// Event handlers //
+////////////////////
 
 sliderEl.addEventListener("input", function (e) {
   const tempSliderValue = e.target.value;
@@ -104,17 +121,16 @@ sliderEl.addEventListener("input", function (e) {
 
 checks.forEach((el) =>
   el.addEventListener("click", function () {
-    pointsCheckboxes = 0;
+    // checkboxes.forEach((checkbox) => {
+    //   if (checkbox.checked) {
+    //     pointsCheckboxes += Number(checkbox.value);
+    //   }
+    // });
 
-    checkboxes.forEach((checkbox) => {
-      if (checkbox.checked) {
-        pointsCheckboxes += Number(checkbox.value);
-      }
-    });
-
+    pointsCheckboxes = checkboxes
+      .filter((checkbox) => checkbox.checked)
+      .reduce((sum, checkbox) => sum + Number(checkbox.value), 0);
     strengthRating();
-
-    console.log(pointsCheckboxes);
   })
 );
 

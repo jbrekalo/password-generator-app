@@ -70,6 +70,7 @@
               id="lowercase"
               class="checkbox"
               value="5"
+              checked
             />
             <label for="lowercase">Include Lowercase Letters</label>
           </span>
@@ -80,6 +81,7 @@
               id="numbers"
               class="checkbox"
               value="5"
+              checked
             />
             <label for="numbers">Include Numbers</label>
           </span>
@@ -99,16 +101,20 @@
           <div class="flex">
             <p class="app__strength-value">Medium</p>
             <div class="app__strength-bars">
-              <div class="app__strength-bar app__strength-bar--very-weak"></div>
-              <div class="app__strength-bar"></div>
-              <div class="app__strength-bar"></div>
+              <div class="app__strength-bar app__strength-bar--medium"></div>
+              <div class="app__strength-bar app__strength-bar--medium"></div>
+              <div class="app__strength-bar app__strength-bar--medium"></div>
               <div class="app__strength-bar"></div>
             </div>
           </div>
         </div>
         <button class="app__button">
           <p>Generate</p>
-          <img src="./assets/images/icon-arrow-right.svg" alt="" />
+          <img
+            class="app__button-arrow"
+            src="./assets/images/icon-arrow-right.svg"
+            alt=""
+          />
         </button>
       </section>
     </main>
