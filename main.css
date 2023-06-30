@@ -145,7 +145,7 @@ select {
 
 p:empty:before {
   content: attr(data-placeholder);
-  color: var(--clr-grey);
+  color: var(--clr-almost-white);
 }
 
 /* ------------------- */
