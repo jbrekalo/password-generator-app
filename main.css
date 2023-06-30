@@ -76,7 +76,7 @@ body {
   color: var(--clr-almost-white);
   line-height: 1.5;
 
-  background-color: var(--clr-very-dark-grey);
+  background: linear-gradient(180deg, #14131b 0%, #08070b 100%);
   min-height: 100vh;
 }
 

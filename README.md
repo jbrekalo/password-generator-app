@@ -31,12 +31,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.png)
+![Screenshoot](/screenshot.png)
 
 ### Links
 
-- Solution URL: [](https://your-solution-url.com)
-- Live Site URL: [](https://jbrekalo.github.io/password-generator-app/)
+- Solution URL: [Frontend Mentor](https://your-solution-url.com)
+- Live Site URL: [Password Generator App](https://jbrekalo.github.io/password-generator-app/)
 
 ## My process
 
