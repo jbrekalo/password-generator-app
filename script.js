@@ -121,12 +121,6 @@ sliderEl.addEventListener("input", function (e) {
 
 checks.forEach((el) =>
   el.addEventListener("click", function () {
-    // checkboxes.forEach((checkbox) => {
-    //   if (checkbox.checked) {
-    //     pointsCheckboxes += Number(checkbox.value);
-    //   }
-    // });
-
     pointsCheckboxes = checkboxes
       .filter((checkbox) => checkbox.checked)
       .reduce((sum, checkbox) => sum + Number(checkbox.value), 0);

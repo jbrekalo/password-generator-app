@@ -24,7 +24,16 @@
   --fs-200: 1.6rem;
 
   /* padding */
-  --padding-md: 1.6rem;
+  --padding-800: 3.2rem;
+  --padding-600: 2.4rem;
+  --padding-400: 1.6rem;
+  --padding-200: 0.8rem;
+
+  /* margin */
+  --margin-800: 3.2rem;
+  --margin-600: 2.4rem;
+  --margin-400: 1.6rem;
+  --margin-200: 0.8rem;
 }
 
 /* ------------------- */
@@ -111,7 +120,7 @@ select {
 }
 
 .padding-side-md {
-  padding: 0 1.6rem;
+  padding: 0 var(--padding-400);
 }
 
 .marging-btm-sm {
@@ -145,7 +154,7 @@ p:empty:before {
 
 .app {
   width: 100%;
-  padding: 0 1.6rem;
+  padding: 0 var(--padding-400);
   font-size: var(--fs-200);
 }
 
@@ -154,7 +163,7 @@ p:empty:before {
   color: var(--clr-grey);
   text-align: center;
 
-  margin-bottom: 1.6rem;
+  margin-bottom: var(--margin-400);
 }
 
 .app__result-container {
@@ -165,7 +174,7 @@ p:empty:before {
   height: 6.4rem;
 
   margin-bottom: 1.6rem;
-  padding: 0 1.6rem;
+  padding: 0 var(--padding-400);
 
   background: var(--clr-dark-grey);
 }
@@ -192,7 +201,7 @@ p:empty:before {
 }
 
 .app__controls {
-  padding: 1.6rem;
+  padding: var(--padding-400);
   background: var(--clr-dark-grey);
 }
 
@@ -200,12 +209,12 @@ p:empty:before {
   display: flex;
   flex-direction: column;
 
-  margin-bottom: 3.2rem;
+  margin-bottom: var(--margin-800);
 }
 
 .app__slider-container {
   position: relative;
-  height: 2.8rem;
+  height: 2.6rem;
 }
 
 .app__slider {
@@ -217,7 +226,7 @@ p:empty:before {
   width: 100%;
   margin: 0;
 
-  background: var(--clr-almost-white);
+  background: var(--clr-very-dark-grey);
 }
 
 .app__slider::-webkit-slider-thumb {
@@ -243,7 +252,9 @@ p:empty:before {
 .app__slider-progressbar {
   position: absolute;
   left: 0;
-  top: 9px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
   z-index: 0;
 
   width: 47.37%;
@@ -299,8 +310,8 @@ input[type="checkbox"]:checked + label::before {
   justify-content: space-between;
 
   height: 5.6rem;
-  padding: 0 1.6rem;
-  margin-bottom: 1.6rem;
+  padding: 0 var(--padding-400);
+  margin-bottom: var(--margin-400);
 
   background: var(--clr-very-dark-grey);
 }
@@ -316,7 +327,7 @@ input[type="checkbox"]:checked + label::before {
   color: var(--clr-almost-white);
   text-transform: uppercase;
 
-  margin-right: 1.6rem;
+  margin-right: var(--margin-400);
 }
 
 .app__strength-bars {
@@ -387,29 +398,80 @@ input[type="checkbox"]:checked + label::before {
   margin-right: 1.6rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   :root {
     /* font-size */
-    --fs-800: 3.2rem;
     --fs-600: 3.2rem;
-    --fs-400: 1.8rem;
     --fs-200: 1.8rem;
+
+    /* padding */
+    --padding-800: 3.2rem;
+    --padding-400: 3.2rem;
+
+    /* margin */
+    --margin-800: 3.2rem;
+    --margin-400: 3.2rem;
+  }
+
+  .marging-btm-sm {
+    margin-bottom: 1.6rem;
   }
 
   .app {
-    padding: 11.4rem;
+    max-width: 54rem;
+    padding: 0rem;
+  }
+
+  .app__title {
+    font-size: 2.4rem;
+    margin-bottom: var(--margin-400);
   }
 
   .app__result-container {
     height: 8rem;
-    padding: 0 3.2rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .app__icon-copy {
+    width: 21px;
+    height: 24px;
+  }
+
+  .app__slider-container {
+    position: relative;
+    height: 2.1rem;
   }
 
   .app__slider-progressbar {
     top: 12px;
   }
 
-  .app__controls {
-    padding: 3.2rem;
+  input[type="checkbox"]:checked + label::before {
+    content: url(assets/images/icon-check.svg);
+    align-content: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    width: 2rem;
+    height: 2rem;
+
+    margin-right: 2rem;
+  }
+
+  .app__strength {
+    height: 7.2rem;
+    padding: 0 var(--padding-400);
+    margin-bottom: var(--margin-400);
+  }
+
+  .app__strength-value {
+    font-size: 2.4rem;
+
+    margin-right: 1.6rem;
+  }
+
+  .app__button {
+    height: 6.5rem;
   }
 }
