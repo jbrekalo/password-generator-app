@@ -143,3 +143,10 @@ btnCopy.addEventListener("click", function (e) {
 
   appCopyLabel.classList.remove("hidden");
 });
+
+// Hide progressbar in firefox
+var FIREFOX = /Firefox/i.test(navigator.userAgent);
+
+if (FIREFOX) {
+  sliderProgressBar.style.display = "none";
+}
